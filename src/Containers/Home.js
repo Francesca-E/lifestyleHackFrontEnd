@@ -15,8 +15,8 @@ class Home extends Component {
   }
 
 componentDidMount(){
-   fetch('https://floating-cove-43869.herokuapp.com/home',{
-    method:'get',
+   fetch('https://floating-cove-43869.herokuapp.com/userHome',{
+    method:'post',
     headers:{'Content-type':'application/json'},
     body:JSON.stringify({
     email:this.props.currentUser.email,
@@ -28,7 +28,7 @@ componentDidMount(){
     this.setState({goals:goal})
    }
   })
-}
+  }
 
   deleteGoal=(item)=>{
     fetch('https://floating-cove-43869.herokuapp.com/home',{
