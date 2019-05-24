@@ -11,7 +11,7 @@ class Todos extends React.Component {
 }
 
 componentDidMount(){
-  fetch(`http://localhost:3000/todos/${this.props.userEmail}`)
+  fetch(`https://floating-cove-43869.herokuapp.com/todos/${this.props.userEmail}`)
    .then(response =>response.json())
    .then(todos=>{
      if(todos){
@@ -23,7 +23,7 @@ componentDidMount(){
 }
 
   deleteTodo=(id)=>{
-    fetch(' https://floating-cove-43869.herokuapp.com/todos',{
+    fetch('https://floating-cove-43869.herokuapp.com/todos',{
        method:'delete',
        headers:{'Content-type':'application/json'},
        body:JSON.stringify({
