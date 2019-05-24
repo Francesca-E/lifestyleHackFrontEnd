@@ -11,16 +11,24 @@ class Todos extends React.Component {
 }
 
 componentDidMount(){
-  fetch(`https://floating-cove-43869.herokuapp.com/todos/${this.props.userEmail}`)
-   .then(response =>response.json())
-   .then(todos=>{
-     if(todos){
-       this.setState({
-         todos:todos
-       })
-    }
+  fetch('https://floating-cove-43869.herokuapp.com/todos',{
+     method:'post',
+     headers:{'Content-type':'application/json'},
+     body:JSON.stringify({
+     content:item,
+     goal:this.props.route,
+     email:this.props.userEmail
    })
-}
+  })
+  .then(response =>response.json())
+  .then(todos=>{
+    if(todos){
+     this.setState({todos:todos})
+      }
+    })
+
+  }
+
 
   deleteTodo=(id)=>{
     fetch('https://floating-cove-43869.herokuapp.com/todos',{
