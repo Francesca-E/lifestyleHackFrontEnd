@@ -84,7 +84,8 @@ addGoal=(item)=>{
 render(){
    let section;
    if (!this.state.goals.length|| !this.state.route) {
-       section=<h1 className='tc mt7 outline'>Create a separate to-do list for each of your goals. Add a new goal and then click on it to create a to-do list</h1>
+       section=<h1 className='tc mt7 outline'>Create a separate to-do list for each of your goals.
+       Add a new goal and then click on the face to create a corresponding to-do list</h1>
    }else{
         section=
           <Todos userGoals={this.state.goals} route={this.state.route} userEmail={this.props.currentUser.email}/>
