@@ -11,7 +11,6 @@ class Todos extends React.Component {
 }
 
 componentDidMount(){
-  if (item){
   fetch('https://floating-cove-43869.herokuapp.com/userTodos',{
      method:'post',
      headers:{'Content-type':'application/json'},
@@ -25,7 +24,6 @@ componentDidMount(){
      this.setState({todos:todos})
       }
     })
-   }
   }
 
 
