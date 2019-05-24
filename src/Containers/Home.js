@@ -16,11 +16,10 @@ class Home extends Component {
 
 componentDidMount(){
    fetch('https://floating-cove-43869.herokuapp.com/home',{
-    method:'post',
+    method:'get',
     headers:{'Content-type':'application/json'},
     body:JSON.stringify({
     email:this.props.currentUser.email,
-    goalname:item,
    })
   })
   .then(response =>response.json())

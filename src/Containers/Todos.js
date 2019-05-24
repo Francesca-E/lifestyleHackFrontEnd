@@ -12,11 +12,9 @@ class Todos extends React.Component {
 
 componentDidMount(){
   fetch('https://floating-cove-43869.herokuapp.com/todos',{
-     method:'post',
+     method:'get',
      headers:{'Content-type':'application/json'},
      body:JSON.stringify({
-     content:item,
-     goal:this.props.route,
      email:this.props.userEmail
    })
   })
