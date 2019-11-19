@@ -1,0 +1,7 @@
+#!/usr/bin/osascript
+
+try
+	tell application "System Events" to display dialog (system attribute "ASKPASS_MESSAGE") default answer "" with hidden answer
+	text returned of result
+on error number -128 # cancel
+end try
